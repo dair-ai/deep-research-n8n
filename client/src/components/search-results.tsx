@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Clock, Eye, Code, Copy, Download, Share, AlertTriangle, RotateCcw, Settings } from "lucide-react";
+import { Clock, Eye, Code, Copy, Download, Share, AlertTriangle, RotateCcw, Settings, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
