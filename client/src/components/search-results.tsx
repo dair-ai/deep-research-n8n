@@ -66,12 +66,18 @@ export function SearchResults({
   }
 
   const result = results[0];
+  
+  // Add safety check for result
+  if (!result) {
+    return null;
+  }
+
   const timestamp = new Date().toLocaleString();
 
   const handleCopy = async () => {
     try {
       const content = activeTab === "formatted" 
-        ? result.output_html || result.output
+        ? (result.output_html || result.output)
         : result.output;
       
       await navigator.clipboard.writeText(content);
@@ -129,13 +135,15 @@ export function SearchResults({
               <TabsContent value="formatted" className="m-0">
                 <div 
                   className="prose prose-gray max-w-none"
-                  dangerouslySetInnerHTML={{ __html: result.output_html || result.output }}
+                  dangerouslySetInnerHTML={{ 
+                    __html: result?.output_html || result?.output || "No content available" 
+                  }}
                 />
               </TabsContent>
 
               <TabsContent value="raw" className="m-0">
                 <pre className="bg-gray-50 p-4 rounded-lg text-sm text-gray-800 whitespace-pre-wrap overflow-x-auto">
-                  {result.output}
+                  {result?.output || "No content available"}
                 </pre>
               </TabsContent>
             </div>

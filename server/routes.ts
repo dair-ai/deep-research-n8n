@@ -27,6 +27,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const data: SearchResponse = await response.json();
       
+      // Log the response structure for debugging
+      console.log("n8n response:", JSON.stringify(data, null, 2));
+      
       res.json(data);
     } catch (error) {
       console.error("Search API error:", error);
