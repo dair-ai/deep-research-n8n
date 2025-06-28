@@ -59,7 +59,7 @@ export default function Home() {
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                 <Search className="h-4 w-4 text-white" />
               </div>
-              <h1 className="text-xl font-semibold text-gray-900">Research Assistant</h1>
+              <h1 className="text-xl font-semibold text-gray-900">DAIR.AI Deep Research</h1>
             </div>
             <div className="flex items-center space-x-2 text-sm text-gray-500">
               <Bot className="h-4 w-4" />
@@ -68,7 +68,6 @@ export default function Home() {
           </div>
         </div>
       </header>
-
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <SearchForm 
@@ -85,7 +84,6 @@ export default function Home() {
           onCopySuccess={handleCopySuccess}
         />
       </main>
-
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 mt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -108,7 +106,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
       {/* Toast Notification */}
       <Toast
         message={toast.message}
