@@ -61,27 +61,24 @@ export function SearchResults({
     );
   }
 
-  if (!results || results.length === 0) {
+  if (!results) {
     return null;
   }
 
-  const result = results[0];
-  
-  // Add safety check for result
-  if (!result) {
-    return null;
-  }
+  const result = results;
 
   const timestamp = new Date().toLocaleString();
 
   const handleCopy = async () => {
     try {
       const content = activeTab === "formatted" 
-        ? (result.output_html || result.output)
-        : result.output;
+        ? (result?.output_html || result?.output)
+        : result?.output;
       
-      await navigator.clipboard.writeText(content);
-      onCopySuccess();
+      if (content) {
+        await navigator.clipboard.writeText(content);
+        onCopySuccess();
+      }
     } catch (error) {
       console.error("Failed to copy:", error);
     }

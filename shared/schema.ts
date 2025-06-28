@@ -37,10 +37,10 @@ export const searchRequestSchema = z.object({
   query: z.string().min(1, "Query is required"),
 });
 
-export const searchResponseSchema = z.array(z.object({
+export const searchResponseSchema = z.object({
   output: z.string(),
   output_html: z.string(),
-}));
+});
 
 export type SearchRequest = z.infer<typeof searchRequestSchema>;
 export type SearchResponse = z.infer<typeof searchResponseSchema>;
