@@ -3,9 +3,14 @@ import { createServer, type Server } from "http";
 import { z } from "zod";
 import { searchRequestSchema, type SearchResponse } from "@shared/schema";
 
-const N8N_WEBHOOK_URL = "https://omarsar.app.n8n.cloud/webhook-test/search";
+const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL;
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Validate webhook URL is configured
+  if (!N8N_WEBHOOK_URL) {
+    throw new Error("N8N_WEBHOOK_URL environment variable is not set");
+  }
+
   // Search endpoint that proxies to n8n webhook
   app.post("/api/search", async (req, res) => {
     try {
