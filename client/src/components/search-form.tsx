@@ -10,8 +10,8 @@ interface SearchFormProps {
 
 const SUGGESTIONS = [
   "Future of renewable energy",
-  "Impact of AI on healthcare", 
-  "Blockchain technology trends"
+  "Impact of AI on healthcare",
+  "Blockchain technology trends",
 ];
 
 export function SearchForm({ onSearch, isLoading }: SearchFormProps) {
@@ -31,9 +31,12 @@ export function SearchForm({ onSearch, isLoading }: SearchFormProps) {
   return (
     <section className="text-center mb-12">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Deep Research Assistant</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          Deep Research Assistant
+        </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Enter your research query and let our AI-powered workflow provide comprehensive insights and analysis.
+          Enter your research query and let our AI-powered workflow provide
+          comprehensive insights and analysis.
         </p>
       </div>
 
