@@ -38,28 +38,25 @@ export function SearchForm({ onSearch, isLoading }: SearchFormProps) {
       </div>
 
       <form onSubmit={handleSubmit} className="relative max-w-2xl mx-auto">
-        <div className="relative flex">
+        <div className="relative">
           <Input
             type="text"
             placeholder="Ask me anything... (e.g., 'Latest developments in quantum computing')"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full px-6 py-4 text-lg border border-gray-300 rounded-l-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent border-r-0"
+            className="w-full px-6 py-4 pr-24 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             disabled={isLoading}
             required
           />
           <Button
             type="submit"
             disabled={isLoading || !query.trim()}
-            className="px-6 py-4 bg-blue-600 text-white rounded-r-xl hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 font-medium border border-blue-600"
+            className="absolute right-2 top-2 bottom-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 font-medium"
           >
             {isLoading ? (
               <Loader2 className="h-4 w-4 animate-spin" />
             ) : (
-              <>
-                <Search className="h-4 w-4 mr-2" />
-                Search
-              </>
+              <Search className="h-4 w-4" />
             )}
           </Button>
         </div>
