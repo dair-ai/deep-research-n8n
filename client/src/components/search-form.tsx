@@ -47,7 +47,7 @@ export function SearchForm({ onSearch, isLoading }: SearchFormProps) {
             placeholder="Ask me anything... (e.g., 'Latest developments in quantum computing')"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full px-6 py-4 pr-16 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-6 py-6 pr-16 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             disabled={isLoading}
             required
           />
