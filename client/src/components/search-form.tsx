@@ -44,14 +44,14 @@ export function SearchForm({ onSearch, isLoading }: SearchFormProps) {
             placeholder="Ask me anything... (e.g., 'Latest developments in quantum computing')"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full px-6 py-4 pr-24 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-6 py-4 pr-16 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             disabled={isLoading}
             required
           />
           <Button
             type="submit"
             disabled={isLoading || !query.trim()}
-            className="absolute right-2 top-2 bottom-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 font-medium"
+            className="absolute right-1 top-1/2 -translate-y-1/2 h-10 w-10 p-0 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             {isLoading ? (
               <Loader2 className="h-4 w-4 animate-spin" />
