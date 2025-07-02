@@ -37,7 +37,7 @@ export function SearchForm({ onSearch, isLoading }: SearchFormProps) {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="relative max-w-2xl mx-auto">
+      <form onSubmit={handleSubmit} className="relative max-w-3xl mx-auto">
         <div className="relative">
           <Input
             type="text"
